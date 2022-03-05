@@ -1,0 +1,291 @@
+:root {
+    --color: rgb(196, 196, 196);
+    --background: rgb(40, 44, 52);
+    --theme-dark: rgb(33, 37, 43);
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    color: var(--color);
+}
+
+a {
+    text-decoration: none;
+    transition: .2s;
+    color: #043b79;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1d64b6;
+    cursor: pointer;
+}
+
+.navigation {
+    background: var(--theme-dark);
+    position: fixed;
+    width: 100%;
+    height: 2em;
+}
+
+.logo {
+    color: #fff;
+    padding: 8px;
+}
+
+.title {
+    position: fixed;
+    width: 100%;
+    height: 2em;
+    top: 5px;
+    text-align: center;
+    color: var(--color);
+}
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+.navigation-menu {
+    position: fixed;
+    top: 8px;
+    list-style-type: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.informations {
+    position: absolute;
+    top: 5px;
+}
+
+.context-menu {
+    position: absolute;
+    z-index: 3;
+}
+
+.navigation li a {
+    display: block;
+    color: var(--color);
+}
+
+.navigation li {
+    font-size: 13px;
+}
+
+.navigation li a:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.onglet {
+    position: fixed;
+    z-index: 2;
+    top: 2rem;
+    width: 4rem;
+    height: 100%;
+    background: rgb(51, 56, 66);
+    color: var(--color);
+    text-align: center;
+}
+
+.onglet i {
+    padding: 15px;
+    transition: color .4s;
+}
+
+.onglet i:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.active {
+    color: #fff;
+}
+
+.content {
+    position: fixed;
+    top: 2rem;
+    left: 4rem;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.properties {
+    position: fixed;
+    background: var(--theme-dark);
+    height: 410px;
+    width: 25%;
+    left: 1050px;
+    top: 68px;
+    padding: 7px;
+}
+
+.picture-update {
+    background: var(--theme-dark);
+    text-align: center;
+    border-radius: 3px;
+    width: 950px;
+    height: 425px;
+}
+
+.fa-plus {
+    position: fixed;
+    font-size: 40px;
+    display: inline-block;
+    top: 250px;
+}
+
+.picture {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 3px;
+    width: 950px;
+    height: 425px;
+}
+
+.log {
+    margin-top: 15px;
+}
+
+textarea {
+    resize: none;
+    background: var(--background);
+    color: var(--color);
+    outline: none;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    background: #043b79;
+    color: #fff;
+}
+
+button,
+input[type=button] {
+    margin-bottom: 3px;
+}
+
+button:hover,
+input[type=button]:hover {
+    transition: .2s;
+    background: #043b7994;
+    cursor: pointer;
+}
+
+canvas {
+    z-index: 2;
+    width: 950px;
+    height: 425px;
+}
+
+#compile_map {
+    transition: .2s;
+    margin-top: 5px;
+    background: rgb(55, 180, 5);
+}
+
+#compile_map:hover {
+    background: rgb(66, 218, 6);
+}
+
+#environment {
+    position: absolute;
+    left: 0px
+}
+
+.infobulle {
+    position: relative;
+}
+
+.infobulle:hover:after,
+.infobulle:focus:after {
+    content: attr(aria-label);
+    position: absolute;
+    top: 2.4em;
+    left: 50%;
+    z-index: 1;
+    white-space: nowrap;
+    padding: 5px 14px;
+    background: #043b79;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+    transform: translateX(-50%);
+}
+
+.left:hover:after,
+.left:focus:after {
+    text-align: left;
+    background: #383838;
+    transform: translateX(0%);
+    top: 11px;
+    left: calc(100% + 10px);
+    box-shadow: 0px 0px 3px #000;
+}
+
+.content [aria-label]:hover:before,
+.content [aria-label]:focus:before {
+    content: "▲";
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    /* on centre horizontalement  */
+    font-size: 20px;
+    color: #043b79;
+}
+
+
+/* pas de contour durant le :focus */
+
+[aria-label]:focus {
+    outline: none;
+}
+
+.swal2-modal {
+    background: var(--background);
+}
+
+.swal2-close {
+    box-shadow: none;
+}
+
+.swal2-styled.swal2-confirm {
+    outline: none;
+    border: none;
+    background-color: var(--theme-dark);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: var(--color);
+    border-radius: 2px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}

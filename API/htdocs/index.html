@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>MAPMAKER</title>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+    <script src='/socket.io-file-client.js'></script>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src='/assets/maps.js'></script>
+    <script src='/assets/app.js'></script>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='/assets/styles.css'>
+
+
+
+</head>
+
+<body>
+    <div class='navigation'>
+        <i class='fa fa-paint-brush logo' aria-hidden='true'></i>
+
+        <span class='title'>United - Blablaland - MapMaker</span>
+    </div>
+
+    <div class='onglet'>
+        <button id='compile_map' aria-label='Compiler' class='infobulle left'><i class='fa fa-play' aria-hidden='true'></i></button>
+        <hr>
+        <i class='fa fa-picture-o active' aria-hidden='true'></i>
+        <i class='fa fa-info' aria-hidden='true'></i>
+    </div>
+
+    <div class='content'>
+
+        <div class='informations'>
+            <input type='button' id='mouseX' value='mouseX : 0'>
+            <input type='button' id='mouseY' value='mouseY : 0'>
+            <button aria-label='Outil Rectangle' id='rectangle' class='infobulle'><i class='fa fa-pencil-square-o'></i></button>
+            <button aria-label='Outil Effacer' id='eraser' class='infobulle'><i class='fa fa-eraser'></i></button>
+
+            <input type='checkbox' id='env'>
+            <label for='env'>environment</label>
+        </div>
+
+        <div class='picture-update'>
+            <div class='picture'>
+                <canvas id='collision' width='950' height='425'></canvas>
+                <canvas id='environment' width='950' height='425'></canvas>
+            </div>
+            <i class='fa fa-plus' aria-hidden='true'></i>
+        </div>
+
+        <div class='properties'>
+            <input type='button' value='Charger une collision ?' id='load_collision'>
+            <input type='button' value='Dessiner des collisions ?' id='draw_collision'>
+            <input type='button' value='Opts' id='open_options'>
+            <!-- <input type='button' value='Compiler la map' id='compile_map'> -->
+            <input type='button' value='Paramètre' id='parametre'>
+            <input type='button' value='Rechercher un ID ?' id='searchID'>
+        </div>
+
+        <div class='log'>
+            <textarea id='log' rows='10' cols='132' readonly>Connexion au serveur en cours ...</textarea>
+        </div>
+    </div>
+
+    <div class='hidden'>
+        <input type='file' id='picture_file' />
+        <input type='file' id='picture_file_collision' />
+    </div>
+</body>
+
+</html>
